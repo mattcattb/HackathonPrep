@@ -48,6 +48,21 @@ npm init -y
 ```bash
 npm install express nodemon mongoose
 ```
+
+3. Setup src folder structure
+
+```bash
+mkdir src
+cd src
+touch server.js
+mkdir controllers
+mkdir routes
+mkdir lib
+mkdir middleware
+mkdir models
+```
+
+4. create express
  
 ## Setup Database 
 
@@ -62,3 +77,10 @@ NODE_ENV=
 
 # Source Structure
 After installing all dependencies, we must put our folders in the proper filestructure.
+
+
+## Frontend 
+
+1. Delete unused files
+
+2. Prepare Routing
