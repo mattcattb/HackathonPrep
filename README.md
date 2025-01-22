@@ -15,7 +15,19 @@ npm install -d tailwind
 
 ```
 
-3. Setup Tailwind
+3. Setup Directory Structure
+```bash
+cd src
+mkdir store 
+mkdir components
+mkdir pages
+mkdir hooks
+mkdir styles
+mv index.css styles
+touch routing.jsx
+```
+
+4. Setup Tailwind
 
 ```bash
 npx tailwindcss init
@@ -81,6 +93,13 @@ After installing all dependencies, we must put our folders in the proper filestr
 
 ## Frontend 
 
-1. Delete unused files
+1. Delete following files: 
+- src/app.css
+- src/assets/react.svg
+- public/vite.svg
 
-2. Prepare Routing
+
+2. Change files to remove deleted: 
+-  
+
+3. Add Routing to App.jsx
