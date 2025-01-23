@@ -7,6 +7,7 @@ function App() {
     <div className="">
       <Navbar/>
       <Routes/>
+      <div>Hello</div>
     </div>  
   )
 }

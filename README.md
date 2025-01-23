@@ -10,8 +10,7 @@ npm create vite@latest
 
 2. Install Dependencies
 ```bash
-npm install axios zustand react-router-dom
-npm install -d tailwind
+npm install axios zustand react-router-dom tailwindcss @tailwindcss/vite
 
 ```
 
@@ -28,22 +27,15 @@ touch routing.jsx
 ```
 
 4. Setup Tailwind
-
+add tailwind plugin to vite config
 ```bash
 npx tailwindcss init
 ```
-
-go to tailwind.config.js and add to content: 
-
-```bash
-  "./src/**/*.{js,jsx,ts,tsx}",
-```
+add to vite configuration
 
 Add to index.css
 ```
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 ```
 
 ## Setup Backend
@@ -58,7 +50,7 @@ npm init -y
 
 2. Install Dependencies 
 ```bash
-npm install express nodemon mongoose
+npm install express nodemon mongoose dotenv cors
 ```
 
 3. Setup src folder structure
