@@ -1,6 +1,6 @@
 
 const login = (req, res) => {
-  const {email, password} = req;
+  const {email, password} = req.body;
 
   try {
     
@@ -13,7 +13,7 @@ const login = (req, res) => {
 }
 
 const signup = (req, res) => {
-  const {email, name, password} = req;
+  const {email, name, password} = req.body;
 
   try {
 

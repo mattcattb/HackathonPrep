@@ -10,6 +10,7 @@ const app = express();
 
 app.use(express.json());
 
+app.use('api/', )
 
 app.listen(PORT, () => {
   console.log("Began server on port ", PORT);
