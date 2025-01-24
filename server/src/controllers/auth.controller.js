@@ -48,10 +48,16 @@ export const signup = async (req, res) => {
 
 }
 
-export const logout = (req, res) => {
+export const logout = async (req, res) => {
+  try {
+    res.cookie("jwt", "");
+    res.status(200).json({message: "Logged out successfully"});
+  } catch (error) {
+    console.error("Error occured on serverside logout: ", error.message);
 
+    res.status(500).json({message: "Internal Server Error"});
+  }
 }
-
 export const check = (req, res) => {
   const token = req.header('Authorization')?.replace('Bearer ', '');
 
