@@ -6,13 +6,19 @@ import LoginPage from './pages/auth/LoginPage';
 import SignupPage from './pages/auth/SignupPage';
 import HomePage from './pages/HomePage';
 
+import { useAuthStore } from './hooks/authStore';
+
+
 const Routes = () => {
+
+  const {authUser} = useAuthStore();
+
   return (
     <BrowserRoutes>
-      <Route path="/" element={<LandingPage/>}/>
-      <Route path="/login" element={<LoginPage/>}/>
-      <Route path="/signup" element={<SignupPage/>}/>
-      <Route path="/homepage" element={<HomePage/>}/>
+      <Route path="/" element={!authUser? <LandingPage/> : <HomePage/>}/>
+      <Route path="/login" element={!authUser? <LoginPage/> : <HomePage/>}/>
+      <Route path="/signup" element={!authUser? <SignupPage/> : <HomePage/>}/>
+      <Route path="/homepage" element={authUser? <HomePage/> : <SignupPage/>}/>
     </BrowserRoutes>
   )
 } 

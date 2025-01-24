@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import { useAuthStore } from '../../hooks/authStore';
 
 
 export default function LoginPage() {
@@ -7,6 +8,8 @@ export default function LoginPage() {
     email: '',
     password: '',
   });
+
+  const {login} = useAuthStore();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +22,7 @@ export default function LoginPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Login Form Submitted:', loginForm);
-    // Add your login logic here
+    login(loginForm);
   };
 
   return (

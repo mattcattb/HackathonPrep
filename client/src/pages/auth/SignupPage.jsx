@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import { useAuthStore } from '../../hooks/authStore';
 
 export default function SignupPage() {
   const [signupForm, setSignupForm] = useState({
@@ -8,6 +9,8 @@ export default function SignupPage() {
     password: '',
     confirmPassword: '',
   });
+
+  const {signup} = useAuthStore();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,7 +27,7 @@ export default function SignupPage() {
       return;
     }
     console.log('Signup Form Submitted:', signupForm);
-    // Add your signup logic here
+    signup(signupForm)
   };
 
   return (

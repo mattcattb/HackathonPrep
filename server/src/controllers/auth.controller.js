@@ -1,4 +1,4 @@
-import User from '../models/user.model'
+import User from '../models/user.model.js'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 
@@ -27,7 +27,7 @@ export const signup = async (req, res) => {
   if (!email || !name || !password) return res.status(400).json({message:"Invalid signup parameters."});
   
 
-  if (password.length < 7) return res.status(401).json({message:"Password is too short."});
+  // if (password.length < 7) return res.status(401).json({message:"Password is too short."});
 
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
