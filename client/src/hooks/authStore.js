@@ -11,7 +11,7 @@ export const useAuthStore = create((set) => ({
       console.log(`Response to login: `, res);
       set({authUser: res.data});
     } catch (error) {
-      console.log("error with login: ", error.response.data.message);
+      console.log("error with login: ", error);
     }
   },
 
@@ -21,7 +21,7 @@ export const useAuthStore = create((set) => ({
       console.log(`Response to signup: ${res}`);
       set({authUser: res.data});
     } catch (error) {
-      console.log(`Error with signup: ${error.response.data.message}`);
+      console.log(`Error with signup: ${error}`);
     }
   },
 
@@ -31,7 +31,7 @@ export const useAuthStore = create((set) => ({
       console.log("Response to logout: ", res);
       set({authUser: null});
     } catch (error) {
-      console.log("Error with logout:", error.response.data.message)
+      console.log("Error with logout:", error)
     }
   },
 
