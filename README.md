@@ -50,7 +50,7 @@ npm init -y
 
 2. Install Dependencies 
 ```bash
-npm install express nodemon mongoose dotenv cors
+npm install express nodemon mongoose dotenv cors jsonwebtoken
 ```
 
 3. Setup src folder structure
