@@ -2,15 +2,19 @@ import React from 'react'
 import { Route, Routes as BrowserRoutes } from 'react-router-dom';
 
 import LandingPage from './pages/LandingPage';
-import OnePage from './pages/OnePage';
-import TwoPage from './pages/TwoPage';
+import LoginPage from './pages/auth/LoginPage';
+import SignupPage from './pages/auth/SignupPage';
+import HomePage from './pages/HomePage';
+import LoginCallbackPage from './pages/auth/LoginCallbackPage';
 
 const Routes = () => {
   return (
     <BrowserRoutes>
       <Route path="/" element={<LandingPage/>}/>
-      <Route path="/one" element={<OnePage/>}/>
-      <Route path="/two" element={<TwoPage/>}/>
+      <Route path="/login" element={<LoginPage/>}/>
+      <Route paht="/login/callback" element={<LoginCallbackPage/>}/>
+      <Route path="/signup" element={<SignupPage/>}/>
+      <Route path="/homepage" element={<HomePage/>}/>
     </BrowserRoutes>
   )
 } 

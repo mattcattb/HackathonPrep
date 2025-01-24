@@ -4,10 +4,9 @@ import Routes from "./routes"
 function App() {
 
   return (
-    <div className="">
+    <div className="flex flex-col m-2">
       <Navbar/>
       <Routes/>
-      <div>Hello</div>
     </div>  
   )
 }
