@@ -9,7 +9,7 @@ export const useAuthStore = create((set) => ({
     try {
       const res = await axiosInstance.post("/auth/login", data);
       console.log(`Response to login: `, res);
-      set({authUser: res.data});
+      set({authUser: res.user});
     } catch (error) {
       console.log("error with login: ", error);
     }
@@ -19,7 +19,7 @@ export const useAuthStore = create((set) => ({
     try {
       const res = await axiosInstance.post("/auth/signup", data);
       console.log(`Response to signup: ${res}`);
-      set({authUser: res.data});
+      set({authUser: res.user});
     } catch (error) {
       console.log(`Error with signup: ${error}`);
     }
@@ -34,5 +34,6 @@ export const useAuthStore = create((set) => ({
       console.log("Error with logout:", error)
     }
   },
+
 
 }))
