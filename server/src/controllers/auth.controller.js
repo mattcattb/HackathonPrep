@@ -23,11 +23,10 @@ export const login = async (req, res) => {
 
 export const signup = async (req, res) => {
   const {email, name, password} = req.body;
-  console.log(req)
+
   if (!email || !name || !password) return res.status(400).json({message:"Invalid signup parameters."});
   
   const found = await User.findOne({email: email});
-
   if (found) return res.status(400).json({message: "User already exists!"});
 
   // if (password.length < 7) return res.status(401).json({message:"Password is too short."});

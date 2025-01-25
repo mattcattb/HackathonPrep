@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 import { useAuthStore } from '../../hooks/authStore';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignupPage() {
+  const navigate = useNavigate();
+  
   const [signupForm, setSignupForm] = useState({
     name: '',
     email: '',
@@ -28,6 +31,7 @@ export default function SignupPage() {
     }
     console.log('Signup Form Submitted:', signupForm);
     signup(signupForm)
+    navigate("/homepage")
   };
 
   return (

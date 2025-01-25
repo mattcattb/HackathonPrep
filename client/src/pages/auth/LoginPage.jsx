@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
 import { useAuthStore } from '../../hooks/authStore';
+import { useNavigate } from 'react-router-dom';
 
 
 export default function LoginPage() {
+  const navigate = useNavigate();
   const [loginForm, setLoginForm] = useState({
     email: '',
     password: '',
@@ -23,6 +25,8 @@ export default function LoginPage() {
     e.preventDefault();
     console.log('Login Form Submitted:', loginForm);
     login(loginForm);
+    navigate('/homepage');
+
   };
 
   return (
